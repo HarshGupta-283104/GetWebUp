@@ -1,0 +1,547 @@
+/* ========================================
+   HERO SECTION ANIMATIONS
+   ======================================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.gradient-bg {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.gradient-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(139, 92, 246, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(99, 102, 241, 0.4) 0%, transparent 50%);
+    opacity: 0.6;
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.fade-in-right {
+    animation: fadeInRight 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
+
+.floating {
+    animation: float 3s ease-in-out infinite;
+}
+
+.card-float-1 {
+    animation: float 4s ease-in-out infinite;
+}
+
+.card-float-2 {
+    animation: float 5s ease-in-out infinite 0.5s;
+}
+
+.card-float-3 {
+    animation: float 6s ease-in-out infinite 1s;
+}
+
+.btn-primary {
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.mockup-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    animation: scaleIn 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.website-bar {
+    background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+    border-radius: 12px 12px 0 0;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* ========================================
+   FEATURES SECTION
+   ======================================== */
+
+.feature-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-card:hover {
+    transform: translateY(-12px) scale(1.02);
+}
+
+.icon-wrapper {
+    transition: all 0.4s ease;
+}
+
+.feature-card:hover .icon-wrapper {
+    animation: float 2s ease-in-out infinite;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.feature-card:hover .icon-wrapper i {
+    color: white;
+    transform: scale(1.1);
+}
+
+.icon-wrapper i {
+    transition: all 0.3s ease;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ========================================
+   FADE IN SECTIONS
+   ======================================== */
+
+.fade-in-section {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* ========================================
+   BLOB ANIMATIONS
+   ======================================== */
+
+@keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.animate-blob {
+    animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+    animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+    animation-delay: 4s;
+}
+
+/* ========================================
+   BUTTON HOVER EFFECTS
+   ======================================== */
+
+.btn-hover-shadow {
+    transition: all 0.3s ease;
+}
+
+.btn-hover-shadow:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   GUARANTEE SECTION
+   ======================================== */
+
+.guarantee-section {
+    background-color: #f0f9ff;
+    padding: 4rem 1rem;
+}
+
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .content-wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.guarantee-text {
+    text-align: left;
+}
+
+/* ========================================
+   PROACTIVE SUPPORT SECTION
+   ======================================== */
+
+.proactive-support-section {
+    background-color: #f9fafb;
+}
+
+.support-intro {
+    font-size: 1.125rem;
+    color: #4b5563;
+}
+
+.support-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .support-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.support-graphic-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.support-graphic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.chat-bubble {
+    position: absolute;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 0.75rem 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 200px;
+}
+
+.chat-bubble.top-left {
+    top: 10%;
+    left: -20%;
+}
+
+.chat-bubble.bottom-right {
+    bottom: 10%;
+    right: -20%;
+}
+
+.chat-bubble p {
+    font-size: 0.875rem;
+    color: #1f2937;
+    margin-bottom: 0.25rem;
+}
+
+.support-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.support-feature-item {
+    gap: 1rem;
+}
+
+.support-feature-item i {
+    color: #3b82f6;
+    font-size: 2rem;
+}
+
+.happiness-score {
+    background-color: #dbeafe;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.score-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #1e40af;
+}
+
+.score-label {
+    display: block;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-top: 0.5rem;
+}
+
+.score-source {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-top: 0.5rem;
+}
+
+/* ========================================
+   MIGRATION SECTION
+   ======================================== */
+
+.migration-section {
+    background-color: #ffffff;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .content-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.migration-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.migration-text h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+.migration-text p {
+    font-size: 1.125rem;
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+    line-height: 1.75;
+}
+
+.migrate-btn {
+    background-color: #3b82f6;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: bold;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.migrate-btn:hover {
+    background-color: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================
+   TRUST LOGOS SECTION
+   ======================================== */
+
+.trust-logos-section {
+    text-align: center;
+}
+
+.trust-logos-section h2 {
+    text-align: center;
+}
+
+.trust-logo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trust-logo-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.trust-logo-item img {
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.trust-logo-item:hover img {
+    filter: grayscale(0%);
+}
+
+.rating-stars {
+    display: flex;
+    gap: 0.25rem;
+    color: #fbbf24;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.review-text {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+/* ========================================
+   SUPPORT WIDGET
+   ======================================== */
+
+#support-container {
+    position: fixed;
+    bottom: 30px;
+    right: 15px;
+    z-index: 999999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#support-options {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+#support-options.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.support-icon {
+    width: 45px;
+    height: 45px;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.support-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(37, 211, 102, 0.7);
+}
+
+.support-btn-wrapper {
+    position: relative;
+    width: 65px;
+    height: 65px;
+}
+
+#support-btn {
+    width: 65px;
+    height: 65px;
+    cursor: pointer;
+    animation: bounce 2.5s infinite ease-in-out;
+    position: relative;
+    z-index: 2;
+}
+
+.pulse-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: rgba(37, 211, 102, 0.3);
+    animation: pulse 2.5s infinite ease-out;
+    z-index: 1;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.7; }
+    70% { transform: scale(1.5); opacity: 0; }
+    100% { transform: scale(1.5); opacity: 0; }
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS
+   ======================================== */
+
+@media (max-width: 768px) {
+    .feature-card {
+        padding: 1.5rem;
+    }
+    
+    .icon-wrapper {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .icon-wrapper i {
+        font-size: 2rem;
+    }
+}

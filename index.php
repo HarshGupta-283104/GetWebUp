@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="assets/css/style-index.css">
 </head>
 <body class="bg-gray-50 text-gray-800">
-    <?php include 'header.php'; ?>
-
+    
     <main>
         <!-- Hero Section -->
-        <section class="gradient-bg text-white py-16 md:py-24 lg:py-32 min-h-[600px] relative">
+        <?php include 'header.php'; ?>
+        <section class="gradient-bg relative text-white py-20  min-h-[600px] h-screen -top-20 ">
             <div class="container mx-auto px-4 relative z-10">
                 <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
                     <!-- Left Content -->
@@ -34,7 +34,7 @@
                     </div>
                     
                     <!-- Right Mockup -->
-                    <div class="w-full lg:w-1/2 relative fade-in-right delay-3">
+                    <div class="w-full lg:w-1/3 relative fade-in-right delay-3">
                         <div class="relative max-w-[600px] mx-auto">
                             <!-- Main Website Card -->
                             <div class="mockup-card relative floating delay-2">
@@ -569,14 +569,14 @@
                                 onmouseover="this.style.transform='scale(1.1)'"
                                 onmouseout="this.style.transform='scale(1)'"
                                 >
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900 group-hover:text-purple-600 transition-colors">
+                        Advanced Security</h3>
+                        <p class="text-gray-600 text-center leading-relaxed">
+                            Protect your digital assets with free SSL certificates, DDoS protection, malware scanning, and firewall security—all included to keep your website safe from threats.
+                            </p>
                             </div>
-                            <h3 class="text-2xl font-bold mb-4 text-gray-900 group-hover:text-purple-600 transition-colors">
-                            Advanced Security</h3>
-                            <p class="text-gray-600 text-center leading-relaxed">
-                                Protect your digital assets with free SSL certificates, DDoS protection, malware scanning, and firewall security—all included to keep your website safe from threats.
-                                </p>
-                                </div>
-                                
+                            
                     <div class="feature-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl flex flex-col items-center border border-gray-100 group">
                         <div class="icon-wrapper bg-gradient-to-br from-cyan-100 to-blue-100 rounded-2xl w-24 h-24 mb-6 flex items-center justify-center">
                             <i class="fas fa-cloud-arrow-up text-4xl text-cyan-600"></i>
