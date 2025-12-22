@@ -1,0 +1,1131 @@
+/* Base styles using Inter font, smooth transitions for interactive elements */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal scroll on smaller screens */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6; /* Improved readability */
+}
+
+/* Custom vibrant gradient for main hero sections and call-to-actions */
+.gradient-bg {
+    background: linear-gradient(to right, #1A2B68, #3F6AD7); /* Richer Deep Blue to more vibrant Mid Blue */
+}
+.gradient-text {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to right, #1A2B68, #3F6AD7);
+}
+
+/* Enhanced shadow for cards and prominent elements, providing more depth */
+.shadow-strong {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.2), 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+}
+.shadow-hover-xl:hover {
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.3), 0 20px 40px -12px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon coloring for features section - vibrant blue for contrast on white bg */
+.feature-icon {
+    color: #3F6AD7; /* Vibrant Mid Blue for feature icons */
+    transition: color 0.3s ease;
+}
+.feature-card:hover .feature-icon {
+    color: #1A2B68; /* Darker blue on hover */
+}
+
+/* Mobile navigation specific styles */
+#mobile-menu {
+    transition: transform 0.3s ease-in-out; /* Smooth slide-in/out */
+    transform: translateX(100%); /* Start off-screen to the right */
+}
+#mobile-menu.open {
+    transform: translateX(0); /* Slide into view */
+}
+
+/* Loading spinner animation */
+.loader {
+    border: 4px solid rgba(255, 255, 255, 0.3); /* Light border */
+    border-top: 4px solid #fff; /* White spinner color */
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Keyframe for subtle fade-in animation on scroll */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); } /* Slightly more pronounced vertical movement */
+    to { opacity: 1; transform: translateY(0); }
+}
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Slower transition for elegance */
+}
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Specific styles for the hero section's right graphic */
+.hero-graphic {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 1.5rem; /* Large rounded corners */
+    background-color: #e3f2fd; /* Lighter, more vibrant blue background for the graphic area */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Subtle shadow for the graphic container */
+}
+.hero-graphic img {
+    width: 85%; /* Slightly larger main image within graphic */
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 20px rgba(0,0,0,0.15)); /* Stronger drop shadow */
+}
+.sale-badge {
+    position: absolute;
+    top: 15%; /* Adjusted position */
+    left: 10%;
+    background-color: #E84A5C; /* More impactful Red for sale */
+    color: white;
+    padding: 0.85rem 1.75rem; /* Slightly larger padding */
+    border-radius: 9999px; /* Fully rounded */
+    font-weight: 900; /* Bolder font */
+    font-size: 1.6rem; /* Larger font size */
+    transform: rotate(-10deg);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* Stronger shadow */
+    animation: pulse 1.8s infinite alternate ease-in-out; /* Smoother pulse animation */
+}
+@keyframes pulse {
+    from { transform: scale(1) rotate(-10deg); }
+    to { transform: scale(1.08) rotate(-10deg); } /* More pronounced pulse */
+}
+.percent-off {
+    position: absolute;
+    top: 40%;
+    right: 12%; /* Adjusted position */
+    background-color: white;
+    color: #E84A5C; /* More impactful Red for text */
+    padding: 1.8rem 2.5rem; /* Larger padding */
+    border-radius: 1.8rem; /* Larger rounded corners */
+    font-weight: 900;
+    font-size: 3.5rem; /* Larger font size */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2); /* Stronger shadow */
+    line-height: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.percent-off small {
+    font-size: 1.4rem; /* Larger small text */
+    font-weight: 700;
+    margin-top: 0.35rem;
+}
+.country-flags {
+    position: absolute;
+    bottom: 8%; /* Adjusted position */
+    left: 8%;
+    background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
+    padding: 1.1rem; /* Slightly larger padding */
+    border-radius: 1.2rem;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    max-width: 90%;
+    backdrop-filter: blur(2px); /* Subtle blur effect for depth */
+}
+.country-flags .flag-item {
+    display: flex;
+    align-items: center;
+    font-size: 1rem; /* Larger font size */
+    font-weight: 600;
+    color: #334155;
+    transition: transform 0.2s ease;
+}
+.country-flags .flag-item:hover {
+    transform: translateY(-3px); /* Lift on hover */
+}
+.country-flags img {
+    width: 26px; /* Slightly larger flags */
+    height: 20px;
+    border-radius: 5px;
+    margin-right: 0.6rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+.trust-badge {
+    position: absolute;
+    bottom: 8%; /* Adjusted position */
+    right: 8%;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 0.9rem 1.2rem;
+    border-radius: 1.2rem;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    color: #1A2B68; /* Deep Blue for text */
+    backdrop-filter: blur(2px); /* Subtle blur effect for depth */
+    transition: transform 0.2s ease;
+}
+.trust-badge:hover {
+    transform: translateY(-3px); /* Lift on hover */
+}
+.trust-badge i {
+    color: #FFD700; /* Gold for trophy */
+    margin-right: 0.6rem;
+    font-size: 1.4rem; /* Larger icon */
+}
+
+/* Specific styling for highlighted pricing card */
+.highlighted-plan {
+    border-color: #3F6AD7; /* Vibrant Primary blue for highlight */
+    transform: scale(1.07); /* More pronounced larger scale by default */
+    box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.35), 0 20px 40px -12px rgba(0, 0, 0, 0.2); /* Stronger, more attractive shadow */
+    position: relative;
+    z-index: 10;
+}
+/* Reduce scale for highlighted plan on smaller screens */
+@media (max-width: 767px) { /* Applies to mobile and small tablets */
+    .highlighted-plan {
+        transform: scale(1.03); /* Slightly reduced scale to prevent potential overflow */
+    }
+}
+.highlighted-plan .pricing-cta {
+    background-color: #3F6AD7; /* Vibrant Blue button for highlighted plan */
+}
+.highlighted-plan .pricing-cta:hover {
+    background-color: #1A2B68; /* Deeper blue on hover */
+}
+.badge {
+    padding: 0.3rem 0.8rem; /* Slightly larger badge */
+    border-radius: 9999px;
+    font-size: 0.8rem; /* Slightly larger font */
+    font-weight: bold;
+    display: inline-block;
+}
+.badge-red {
+    background-color: #ffe6e9; /* Lighter red tint */
+    color: #E84A5C; /* More impactful red */
+}
+.badge-green {
+    background-color: #e6ffe6; /* Lighter green tint */
+    color: #28A745; /* Vibrant green */
+}
+.badge-blue {
+    background-color: #e0f2fe; /* Lighter blue tint */
+    color: #2563eb; /* Stronger blue */
+}
+
+/* Testimonial card improvements */
+.testimonial-card {
+    border: 1px solid #dbeafe; /* Light blue border */
+    border-radius: 1.25rem; /* More rounded corners */
+    padding: 2.5rem; /* More padding */
+    background-color: white;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08); /* More noticeable shadow */
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.testimonial-card:hover {
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    transform: translateY(-8px); /* More pronounced lift on hover */
+}
+.stars {
+    color: #FFD700; /* Vibrant Gold for stars */
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem; /* Larger stars */
+}
+.avatar-ring {
+    border: 4px solid #3F6AD7; /* Thicker, vibrant blue ring around avatar */
+    box-shadow: 0 0 0 5px rgba(63, 106, 215, 0.2); /* Subtle glow effect */
+}
+
+/* Countdown timer styling */
+.countdown-timer {
+    display: inline-flex;
+    gap: 0.6rem; /* Slightly more space */
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.25); /* Slightly less transparent */
+    border-radius: 9999px;
+    padding: 0.6rem 1.2rem; /* Larger padding */
+    font-size: 1.2rem; /* Larger font */
+    font-weight: 800; /* Bolder */
+    color: white;
+    margin-top: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Stronger shadow */
+    backdrop-filter: blur(3px); /* More pronounced blur */
+    transition: all 0.3s ease;
+}
+.countdown-timer:hover {
+    background-color: rgba(255, 255, 255, 0.35);
+    transform: scale(1.02);
+}
+.countdown-timer span {
+    min-width: 2.8rem; /* Wider for numbers */
+    text-align: center;
+    line-height: 1.2;
+}
+.countdown-timer .label {
+    font-size: 0.8rem; /* Larger label font */
+    font-weight: 600;
+    display: block;
+    opacity: 0.9;
+    margin-top: -0.2rem;
+    text-transform: uppercase;
+}
+.btn-hover-shadow {
+    transition: all 0.3s ease;
+}
+.btn-hover-shadow:hover {
+    box-shadow: 0 18px 30px -8px rgba(0, 0, 0, 0.3), 0 10px 20px -6px rgba(0, 0, 0, 0.2);
+    transform: translateY(-4px); /* More pronounced lift */
+}
+
+/* Styles for Trust Logos Section */
+.trust-logos-section {
+    background-color: #f8fafc; /* Light gray background */
+    padding: 3rem 0; /* Padding top and bottom */
+    text-align: center;
+    box-shadow: inset 0 5px 15px rgba(0,0,0,0.05); /* Inner shadow for subtle depth */
+}
+
+.trust-logo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid #e0f2fe; /* Light blue border */
+}
+
+.trust-logo-item:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    border-color: #93c5fd; /* Darker blue on hover */
+}
+
+.trust-logo-item .logo-icon {
+    font-size: 2.5rem; /* Large icon size */
+    color: #3b82f6; /* Tailwind blue-500 for a consistent look */
+    margin-bottom: 0.75rem;
+}
+
+.trust-logo-item .logo-name {
+    font-weight: bold;
+    font-size: 1.125rem; /* text-lg */
+    color: #1f2937; /* Gray-900 */
+    margin-bottom: 0.5rem;
+}
+
+.trust-logo-item .rating-stars {
+    color: #22c55e; /* Green for stars to match image */
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.trust-logo-item .review-text {
+    font-size: 0.875rem; /* text-sm */
+    color: #4b5563; /* Gray-600 */
+}
+
+/* New styles for Money Back Guarantee Section */
+.guarantee-section {
+    background: linear-gradient(to right, #3F6AD7, #1A2B68); /* Blue gradient, reversed for variety */
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    margin: 2rem auto;
+    max-width: calc(100% - 2rem); /* Keep some margin on smaller screens */
+}
+
+@media (min-width: 768px) { /* Apply on larger screens only */
+    .guarantee-section {
+        padding: 5rem 0;
+        margin: 4rem auto;
+        max-width: 90%; /* Max width for desktop */
+    }
+}
+
+.guarantee-section .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+    .guarantee-section .content-wrapper {
+        flex-direction: row;
+        text-align: left;
+        padding: 0 2rem;
+    }
+}
+
+.guarantee-section .guarantee-text {
+    flex: 2;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    opacity: 0.95;
+}
+
+.guarantee-section .money-back-badge {
+    flex: 1;
+    width: 150px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 3px dashed rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    padding: 1rem;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    animation: rotate360 15s linear infinite; /* Subtle rotation */
+}
+
+@keyframes rotate360 {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.guarantee-section .money-back-badge span {
+    font-size: 0.8rem;
+    display: block;
+    margin-top: 0.2rem;
+}
+
+/* New styles for Proactive Support Section */
+.proactive-support-section {
+    background-color: #f8fafc;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.proactive-support-section .support-intro {
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+}
+
+.proactive-support-section .support-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+@media (min-width: 768px) {
+    .proactive-support-section .support-grid {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+}
+
+.proactive-support-section .support-graphic-container {
+    position: relative;
+    min-height: 250px; /* Ensure graphic has space */
+    background-color: #ffffff;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Ensure content inside does not overflow */
+}
+
+.proactive-support-section .support-graphic img {
+    width: 80%; /* Adjust size of main image within graphic */
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 10px rgba(0,0,0,0.1));
+}
+
+.proactive-support-section .chat-bubble {
+    position: absolute;
+    background-color: #dbeafe; /* Light blue */
+    border-radius: 1rem;
+    padding: 0.75rem; /* Reduced padding for smaller screens */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    font-size: 0.8rem; /* Reduced font size for smaller screens */
+    font-weight: 500;
+    color: #1A2B68;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: popIn 0.5s forwards ease-out;
+    animation-delay: 0.5s;
+    max-width: 70%; /* Limit chat bubble width to prevent overflow */
+    text-align: left; /* Align text left within bubble */
+    word-wrap: break-word; /* Ensure long words break */
+}
+/* Adjust chat bubble sizes and positions for larger screens */
+@media (min-width: 768px) {
+    .proactive-support-section .chat-bubble {
+        padding: 1rem;
+        font-size: 0.9rem;
+        max-width: 60%; /* Allow wider on desktop */
+    }
+}
+
+.proactive-support-section .chat-bubble.bottom-right {
+    bottom: 10%;
+    right: 10%;
+}
+.proactive-support-section .chat-bubble.top-left {
+    top: 10%;
+    left: 10%;
+    background-color: #e6ffe6; /* Light green for different person */
+    color: #28A745;
+}
+@keyframes popIn {
+    to { opacity: 1; transform: scale(1); }
+}
+
+.proactive-support-section .support-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: left;
+}
+
+.proactive-support-section .support-feature-item {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border: 1px solid #e0f2fe;
+    transition: all 0.3s ease;
+}
+.proactive-support-section .support-feature-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    border-color: #93c5fd;
+}
+
+.proactive-support-section .support-feature-item i {
+    color: #3F6AD7;
+    font-size: 1.5rem;
+    margin-right: 0.75rem;
+}
+
+.proactive-support-section .happiness-score {
+    margin-top: 2rem;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border: 1px solid #e0f2fe;
+    text-align: center;
+}
+.proactive-support-section .happiness-score .score-number {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #28A745; /* Vibrant green */
+    line-height: 1;
+    display: inline-block;
+    vertical-align: middle;
+}
+.proactive-support-section .happiness-score .score-label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1A2B68;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 0.5rem;
+}
+.proactive-support-section .score-source {
+    font-size: 0.8rem;
+    color: #6b7280;
+    margin-top: 0.5rem;
+}
+
+/* New styles for Free Website Migration Section */
+.migration-section {
+    background-color: #e0f2fe; /* Light blue background */
+    padding: 4rem 0;
+    text-align: center;
+    border-radius: 1.5rem;
+    margin: 2rem auto;
+    max-width: calc(100% - 2rem);
+}
+@media (min-width: 768px) {
+    .migration-section {
+        max-width: 90%;
+    }
+}
+.migration-section .content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+@media (min-width: 768px) {
+    .migration-section .content-grid {
+        grid-template-columns: 1fr 2fr; /* Image left, text right */
+    }
+}
+.migration-section .migration-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+.migration-section .migration-text {
+    text-align: center;
+    color: #1A2B68;
+}
+@media (min-width: 768px) {
+    .migration-section .migration-text {
+        text-align: left;
+    }
+}
+.migration-section .migration-text h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.migration-section .migration-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+.migration-section .migrate-btn {
+    background-color: #3F6AD7;
+    color: white;
+    padding: 0.85rem 2rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+.migration-section .migrate-btn:hover {
+    background-color: #1A2B68;
+}
+
+/* New styles for High-Speed Hosting Section */
+.high-speed-hosting-section {
+    background-color: #ffffff;
+    padding: 4rem 0;
+    text-align: center;
+}
+.high-speed-hosting-section .content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+@media (min-width: 768px) {
+    .high-speed-hosting-section .content-grid {
+        grid-template-columns: 2fr 1fr; /* Text left, image right */
+    }
+}
+.high-speed-hosting-section .hosting-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+.high-speed-hosting-section .hosting-text {
+    text-align: center;
+    color: #1f2937;
+}
+@media (min-width: 768px) {
+    .high-speed-hosting-section .hosting-text {
+        text-align: left;
+    }
+}
+.high-speed-hosting-section .hosting-text h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.high-speed-hosting-section .hosting-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+.high-speed-hosting-section .get-started-btn {
+    background-color: #28A745; /* Green button */
+    color: white;
+    padding: 0.85rem 2rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+.high-speed-hosting-section .get-started-btn:hover {
+    background-color: #1A5C28; /* Darker green on hover */
+}
+
+/* New styles for Company Reputation Section */
+.company-reputation-section {
+    background-color: #f8fafc;
+    padding: 4rem 0;
+    text-align: center;
+}
+.company-reputation-section .reputation-features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+@media (min-width: 768px) {
+    .company-reputation-section .reputation-features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: 1024px) {
+    .company-reputation-section .reputation-features-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+.company-reputation-section .reputation-item {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    border: 1px solid #e0f2fe;
+    transition: all 0.3s ease;
+}
+.company-reputation-section .reputation-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+.company-reputation-section .reputation-item .icon {
+    font-size: 3rem;
+    color: #3F6AD7;
+    margin-bottom: 1rem;
+}
+.company-reputation-section .reputation-item h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 0.75rem;
+}
+.company-reputation-section .reputation-item p {
+    color: #4b5563;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* New styles for Clients Call to Action Section (60,000+ Clients) */
+.clients-cta-section {
+    background: linear-gradient(to right, #2563eb, #3b82f6); /* Bright blue gradient */
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+    border-radius: 1.5rem;
+    margin: 2rem auto;
+    max-width: calc(100% - 2rem);
+    position: relative;
+    overflow: hidden;
+}
+@media (min-width: 768px) {
+    .clients-cta-section {
+        max-width: 90%;
+    }
+}
+.clients-cta-section::before,
+.clients-cta-section::after {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+.clients-cta-section::before {
+    width: 150px;
+    height: 150px;
+    top: -50px;
+    left: -50px;
+    animation: moveCircles 10s linear infinite alternate;
+}
+.clients-cta-section::after {
+    width: 200px;
+    height: 200px;
+    bottom: -70px;
+    right: -70px;
+    animation: moveCircles 12s linear infinite reverse alternate;
+}
+@keyframes moveCircles {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(20px, 30px) scale(1.05); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+
+.clients-cta-section h2 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    z-index: 1;
+    position: relative;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.clients-cta-section .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    z-index: 1;
+    position: relative;
+}
+.clients-cta-section .cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+}
+@media (min-width: 640px) {
+    .clients-cta-section .cta-buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+.clients-cta-section .cta-button {
+    background-color: white;
+    color: #2563eb;
+    padding: 0.85rem 2rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+.clients-cta-section .cta-button:hover {
+    background-color: #eff6ff;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+.clients-cta-section .cta-button.outline {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}
+.clients-cta-section .cta-button.outline:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Styles for scrollable containers for mobile slideshow */
+.scroll-container-wrapper {
+    position: relative;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.scroll-container {
+    display: flex;
+    flex-nowrap: nowrap; /* Prevent wrapping */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    scroll-snap-type: x mandatory; /* Snap to child elements */
+    scroll-behavior: smooth; /* Smooth scrolling animation */
+    padding: 0 1rem; /* Padding on container itself to show space at start/end */
+    gap: 1rem; /* Space between items */
+    box-sizing: border-box; /* Include padding in total width */
+    
+    /* Hide scrollbar for Webkit browsers (Chrome, Safari, Edge) */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    /* Hide scrollbar for Firefox */
+    scrollbar-width: none;
+}
+
+.scroll-item {
+    flex-shrink: 0;
+    flex-basis: 100%; /* Default to full width for mobile */
+    margin: 0; /* Remove individual item margins, rely on gap and container padding */
+    scroll-snap-align: center; /* Snap to center of each item for better UX */
+    box-sizing: border-box;
+}
+
+@media (min-width: 640px) and (max-width: 1023px) { /* Adjust for tablets (2 items) */
+    .scroll-item {
+        flex-basis: calc(50% - 0.5rem); /* Two items per row, accounting for 1rem gap */
+    }
+}
+
+@media (min-width: 1024px) { /* Reset for large screens to show grid layout */
+    .scroll-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 column grid */
+        gap: 2rem; /* Gap between grid items */
+        overflow-x: visible; /* Disable scroll */
+        scroll-snap-type: none; /* Disable snap */
+        padding: 0; /* Remove padding for grid layout */
+    }
+    .scroll-item {
+        width: auto; /* Revert to auto width for grid */
+        flex-basis: auto; /* Reset flex basis */
+        margin: 0; /* Remove margin for grid */
+        scroll-snap-align: none; /* Disable snap */
+    }
+}
+
+/* Navigation buttons for scroll container */
+.scroll-nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.9); /* More opaque */
+    border-radius: 50%;
+    width: 44px; /* Larger hit area */
+    height: 44px; /* Larger hit area */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* More prominent shadow */
+    transition: all 0.2s ease;
+    z-index: 20; /* Above scroll items */
+    /* Ensure buttons are initially visible only where needed, then control with JS/media queries */
+    opacity: 0; /* Hidden by default */
+    visibility: hidden; /* Hidden by default */
+}
+/* Show arrows explicitly on screens where carousel applies (mobile/tablet) and they aren't too cramped */
+@media (min-width: 481px) and (max-width: 1023px) {
+    .scroll-nav-button {
+        opacity: 1; /* Always visible on suitable small screens */
+        visibility: visible;
+        display: flex !important; /* Ensure they are flex */
+    }
+}
+/* Hide arrows on desktop (where grid applies) and on very small screens if they overlap */
+@media (min-width: 1024px), (max-width: 480px) {
+    .scroll-nav-button {
+        opacity: 0;
+        visibility: hidden;
+        display: none !important; /* Fully hide */
+    }
+}
+
+.scroll-container-wrapper:hover .scroll-nav-button {
+    /* This rule will apply on larger screens, but the media query above overrides 'display' property */
+    opacity: 1; /* Show on hover for desktop (if not hidden by explicit media query) */
+    visibility: visible;
+}
+.scroll-nav-button:hover {
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* Stronger hover shadow */
+    transform: translateY(-50%) scale(1.08); /* More pronounced lift */
+}
+.scroll-nav-button i {
+    color: #3F6AD7;
+    font-size: 1.3rem; /* Slightly larger icon */
+}
+
+.scroll-nav-button.left {
+    left: 0.25rem; /* Closer to the edge */
+}
+.scroll-nav-button.right {
+    right: 0.25rem; /* Closer to the edge */
+}
+
+/* BEST DEAL Badge specific styles */
+.best-deal-badge {
+    position: absolute;
+    top: -20px; /* Position it above the card */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #28A745; /* Green background */
+    color: white;
+    padding: 0.4rem 1.2rem;
+    border-radius: 9999px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+/* Adjust positioning of badges on inputs/prices */
+.price-wrapper {
+    display: flex;
+    align-items: baseline;
+    justify-content: center; /* Center items for pricing in mobile/scroll view */
+    flex-wrap: wrap; /* Allow wrapping if content is too wide */
+    text-align: center; /* Ensure content is centered within the flex item */
+}
+.price-wrapper .badge {
+    margin-left: 0.5rem; /* Add margin to the badge */
+    margin-top: 0.5rem; /* Allow badge to drop below if space is tight on small screens */
+    flex-shrink: 0; /* Prevent badge from shrinking too much */
+}
+@media (min-width: 768px) {
+    .price-wrapper .badge {
+        margin-top: 0; /* Reset margin on desktop */
+    }
+}
+
+
+/* Custom styles for enhanced mobile experience for the new pricing section */
+.pricing-card {
+    min-width: 280px;
+    max-width: 320px;
+    scroll-snap-align: center;
+}
+
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding: 1rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.best-deal-badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+    z-index: 10;
+}
+
+.highlighted-plan {
+    transform: scale(1.02);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
+}
+
+.price-highlight {
+    background: linear-gradient(135deg, #1e40af, #2563eb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.save-badge {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-left: 8px;
+    box-shadow: 0 2px 6px rgba(239, 68, 68, 0.3);
+}
+
+.feature-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.cta-button {
+    background: linear-gradient(135deg, #1e40af, #2563eb);
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background: linear-gradient(135deg, #1d4ed8, #2563eb);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+
+.scroll-indicator {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 1.5rem;
+}
+
+.scroll-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #d1d5db;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.scroll-dot.active {
+    background: #2563eb;
+    transform: scale(1.2);
+}
+
+@media (min-width: 768px) {
+    .scroll-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        overflow: visible;
+        scroll-snap-type: none;
+        padding: 0;
+    }
+    
+    .pricing-card {
+        min-width: auto;
+        max-width: none;
+    }
+    
+    .scroll-indicator {
+        display: none;
+    }
+}
+
+.fade-in {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
