@@ -844,63 +844,6 @@ body {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Styles for scrollable containers for mobile slideshow */
-.scroll-container-wrapper {
-    position: relative;
-    margin: 0 auto;
-    max-width: 100%;
-}
-
-.scroll-container {
-    display: flex;
-    flex-nowrap: nowrap; /* Prevent wrapping */
-    overflow-x: auto; /* Enable horizontal scrolling */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-    scroll-snap-type: x mandatory; /* Snap to child elements */
-    scroll-behavior: smooth; /* Smooth scrolling animation */
-    padding: 0 1rem; /* Padding on container itself to show space at start/end */
-    gap: 1rem; /* Space between items */
-    box-sizing: border-box; /* Include padding in total width */
-    
-    /* Hide scrollbar for Webkit browsers (Chrome, Safari, Edge) */
-    &::-webkit-scrollbar {
-        display: none;
-    }
-    /* Hide scrollbar for Firefox */
-    scrollbar-width: none;
-}
-
-.scroll-item {
-    flex-shrink: 0;
-    flex-basis: 100%; /* Default to full width for mobile */
-    margin: 0; /* Remove individual item margins, rely on gap and container padding */
-    scroll-snap-align: center; /* Snap to center of each item for better UX */
-    box-sizing: border-box;
-}
-
-@media (min-width: 640px) and (max-width: 1023px) { /* Adjust for tablets (2 items) */
-    .scroll-item {
-        flex-basis: calc(50% - 0.5rem); /* Two items per row, accounting for 1rem gap */
-    }
-}
-
-@media (min-width: 1024px) { /* Reset for large screens to show grid layout */
-    .scroll-container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); /* 3 column grid */
-        gap: 2rem; /* Gap between grid items */
-        overflow-x: visible; /* Disable scroll */
-        scroll-snap-type: none; /* Disable snap */
-        padding: 0; /* Remove padding for grid layout */
-    }
-    .scroll-item {
-        width: auto; /* Revert to auto width for grid */
-        flex-basis: auto; /* Reset flex basis */
-        margin: 0; /* Remove margin for grid */
-        scroll-snap-align: none; /* Disable snap */
-    }
-}
-
 /* Navigation buttons for scroll container */
 .scroll-nav-button {
     position: absolute;
@@ -1128,4 +1071,18 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Header styles - transparent initially, white on scroll */
+header {
+    background-color: transparent ;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bg-white {
+    background-color: white !important;
+}
+
+.shadow-md {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }

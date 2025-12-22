@@ -1,4 +1,4 @@
-<header class=" shadow-md py-3 sticky top-0 z-50 transition-all duration-300">
+<header class="bg-transparent shadow-md py-2 sticky top-0 z-50 transition-all duration-300">
     <div class="container mx-auto px-4">
         <div class="flex justify-between items-center h-16">
             <!-- Left Side - Logo and Navigation -->
@@ -9,10 +9,10 @@
                 </a>
 
                 <!-- Desktop Navigation -->
-                <nav class="hidden lg:flex items-center space-x-1">
+                <nav  class="hidden lg:flex items-center space-x-1">
                     <!-- Hosting Dropdown -->
                     <div class="relative group">
-                        <button class="flex items-center gap-10 px-4 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200">
+                        <button class="flex items-center gap-2.5 px-4 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200">
                             <i class="fas fa-server text-blue-600 text-base"></i>
                             <span>Hosting</span>
                             <svg class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -222,3 +222,23 @@
 
     <div id="mobile-menu-overlay" class="lg:hidden fixed inset-0 bg-black bg-opacity-50 hidden transition-opacity duration-300" style="z-index: 9998;"></div>
 </header>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const header = document.querySelector("header");
+
+        // Ensure header starts as transparent
+        header.classList.add("bg-transparent");
+        header.classList.remove("bg-white", "shadow-md");
+
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 50) {
+                header.classList.add("bg-white", "shadow-md");
+                header.classList.remove("bg-transparent");
+            } else {
+                header.classList.remove("bg-white", "shadow-md");
+                header.classList.add("bg-transparent");
+            }
+        });
+    });
+</script>
