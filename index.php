@@ -13,12 +13,12 @@
     <main>
         <!-- Hero Section -->
         <?php include 'header.php'; ?>
-        <section class="gradient-bg relative text-white py-20  min-h-[600px] h-screen -top-20 ">
+        <section class="gradient-bg relative text-white px-20 py-24 min-h-[600px] h-screen -top-20 ">
             <div class="container mx-auto px-4 relative z-10">
                 <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
                     <!-- Left Content -->
                     <div class="w-full lg:w-1/2 text-center lg:text-left">
-                        <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6 fade-in-up">
+                        <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-5 fade-in-up">
                             Your online success starts here
                         </h1>
                         
