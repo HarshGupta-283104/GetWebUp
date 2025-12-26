@@ -22,6 +22,7 @@
                             Your online success starts here
                         </h1>
                         
+                        
                         <p class="text-lg sm:text-xl md:text-2xl mb-8 opacity-95 max-w-xl mx-auto lg:mx-0 fade-in-up delay-1">
                             From launching a website to growing your business, Hostinger's got you covered.
                         </p>
@@ -62,7 +63,7 @@
                 </div>
             </div>
         </section>
-
+    
         <!-- Hosting & Domain Cards Section -->
         <section class="py-16 px-4 bg-gradient-to-br from-gray-50 to-blue-50">
             <div class="max-w-7xl mx-auto">

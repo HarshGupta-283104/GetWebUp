@@ -1,6 +1,14 @@
 /* Base styles using Inter font, smooth transitions for interactive elements */
+@font-face {
+    font-family: "Boldsf";
+    src: url(./assets/Fonts/Normal.woff2);
+}
+*{
+    font-family: Boldsf,serif;
+}
+
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: "Boldsf", serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -448,6 +456,7 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
+    align-items: center;
 }
 @media (min-width: 768px) {
     .proactive-support-section .support-grid {
@@ -1085,4 +1094,10 @@ header {
 
 .shadow-md {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Corrected font-family declarations for consistency */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Boldsf";
+    font-weight: bold;
 }

@@ -1,4 +1,4 @@
-<header class=" shadow-md py-2  sticky top-0 z-50 transition-all duration-300">
+<header class=" shadow-md py-2 font-[Boldsf]  sticky top-0 z-50 transition-all duration-300">
     <div class="container mx-auto px-4">
         <div class="flex justify-between items-center h-16">
             <!-- Left Side - Logo and Navigation -->
