@@ -1,6 +1,6 @@
 /* Base styles using Inter font, smooth transitions for interactive elements */
 @font-face {
-    font-family: "Boldsf";
+    font-family: Boldsf;
     src: url(./assets/Fonts/Normal.woff2);
 }
 *{
