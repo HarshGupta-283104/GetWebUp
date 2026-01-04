@@ -15,7 +15,7 @@ body {
     overflow-x: hidden; /* Prevent horizontal scroll on smaller screens */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    line-height: 1.6; /* Improved readability */
+    line-height: 1.6; 
 }
 
 /* Custom vibrant gradient for main hero sections and call-to-actions */
