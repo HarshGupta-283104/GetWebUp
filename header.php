@@ -35,6 +35,7 @@
                                     </div>
                                     <span class="bg-green-100 text-green-600 text-xs font-semibold px-2 py-0.5 rounded-full">Popular</span>
                                 </a>
+                                <!-- Cloud Hosting -->
                                 <a href="cloud-hosting.php" class="nav-item flex items-center justify-between px-4 py-3 hover:bg-blue-800 transition-colors duration-200 group/item">
                                     <div class="flex items-center gap-3">
                                         <i class="fas fa-cloud text-sm"></i>
