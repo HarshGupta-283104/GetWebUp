@@ -40,6 +40,7 @@ class ProxmoxAPI {
         
         return json_decode($response, true);
     }
+    // "API request failed with HTTP code: $httpCode"
     
     public function getVMStatus($node, $vmid, $type = 'qemu') {
         $endpoint = "/api2/json/nodes/{$node}/{$type}/{$vmid}/status/current";
