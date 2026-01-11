@@ -498,14 +498,7 @@ if ($isAuthenticated && $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['r
                         <p>Enter the 4-digit OTP sent to your WhatsApp</p>
                         <p><strong>+91 750 968 3151</strong></p>
                     </div>
-                    <input 
-                        type="text" 
-                        name="otp" 
-                        class="otp-input" 
-                        maxlength="4" 
-                        pattern="[0-9]{4}" 
-                        placeholder="0000"
-                        required
+                    <input type="text" name="otp" class="otp-input" maxlength="4" pattern="[0-9]{4}" placeholder="0000" required
                         autofocus
                         inputmode="numeric"
                     >
