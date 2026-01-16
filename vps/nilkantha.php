@@ -212,7 +212,7 @@ if ($isAuthenticated && isset($_GET['action']) && $_GET['action'] === 'getstats'
         $status = $proxmox->getVMStatus($node, $vmid, $type);
         $config = $proxmox->getVMConfig($node, $vmid, $type);
         
-        $combinedData = [
+        $combinedData = [aq
             'status' => $status,
             'config' => $config
         ];
